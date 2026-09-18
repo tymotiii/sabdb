@@ -1,5 +1,30 @@
 #include "mongoose.h"
 #include <unistd.h>
+#define MAX_TABLES 15
+#define MAX_ENTRIES 15
+#define MAX_KVALS 5
+
+struct kval {
+    char key[50];
+    char val[256];
+};
+
+struct entry {
+    struct kval kvals[MAX_KVALS];
+    char name[256];
+
+};
+
+struct table {
+    struct entry entries[MAX_ENTRIES];
+    char name[256];
+};
+
+
+struct sabdb {
+    struct table tables[MAX_TABLES];
+    int pswdhash;
+};
 
 static void handler(struct mg_connection *c, int ev, void *ev_data) {
     if (ev != MG_EV_HTTP_MSG) {
