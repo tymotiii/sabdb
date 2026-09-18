@@ -12,6 +12,7 @@ GET Tymoti.id FROM users
 GET ALL FROM users
 
 DELETE Tymoti FROM users
+```
 
 ## Modification
 
@@ -22,6 +23,7 @@ SET Tymoti.name "Tymoti" FROM users
 SET Tymoti.age 17 FROM users
 
 UNSET Tymoti.age FROM users
+```
 
 ## Searching
 
