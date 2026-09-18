@@ -23,7 +23,6 @@ struct table {
 
 struct sabdb {
     struct table tables[MAX_TABLES];
-    int pswdhash;
 };
 
 static void handler(struct mg_connection *c, int ev, void *ev_data) {
@@ -40,6 +39,8 @@ static void handler(struct mg_connection *c, int ev, void *ev_data) {
 
 int main(void) {
     struct mg_mgr mgr;
+    struct sabdb db;
+
 
     mg_mgr_init(&mgr);
 
